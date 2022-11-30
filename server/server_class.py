@@ -21,7 +21,6 @@ class Server:
         self._keep_alive = False
 
     def _threaded(self, connection: socket, address: str) -> None:
-        print('Entrou na THREAD')
         while (True):
             client_recv = connection.recv(BUFFER_SIZE)
             if (not client_recv):
@@ -39,4 +38,3 @@ class Server:
             self._broadcast_list.append(client)
         else:
             Thread(target=self._threaded, args=(client, address, )).start()
-        print('Voltou para a execução')

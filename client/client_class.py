@@ -1,8 +1,6 @@
 import socket
 
 BUFFER_SIZE = 4096 # Send 4096 bytes each time step
-RECEIVER = '<RECEIVER>'
-SENDER = '<SENDER>'
 
 class Client:
     def __init__(self, host: str, port: str, client_username: str) -> None:
@@ -14,7 +12,7 @@ class Client:
         self._connection.close()
 
     def send_message(self, message: str):
-        self._connection.sendall(f'{self._username}: {message}'.encode())
+        self._connection.sendall(f'[{self._username}] {message}'.encode())
 
     def define_type(self, type: str):
         self._connection.sendall(f'{type}'.encode())
