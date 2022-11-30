@@ -1,10 +1,10 @@
 from threading import Thread
+from util.type import Types
 
 import socket
 
 BUFFER_SIZE = 4096 # Send 4096 bytes each time step
 MAX_CLIENTS = 10
-RECEIVER = '<RECEIVER>'
 
 class Server:
     def __init__(self, host: str, port: str) -> None:
@@ -34,7 +34,8 @@ class Server:
         client, address = self._connection.accept()
         print(f'Conectado com {address}')
         client_recv = client.recv(BUFFER_SIZE)
-        if (client_recv.decode() == RECEIVER):
+        if (client_recv.decode() == Types.RECEIVER.value):
             self._broadcast_list.append(client)
+            Thread(target=self._threaded, args=(client, address, )).start()
         else:
             Thread(target=self._threaded, args=(client, address, )).start()
