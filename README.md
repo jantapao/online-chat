@@ -4,8 +4,8 @@ Repositório referente ao Terceiro Trabalho da disciplina de Redes de Computador
 
 ## Alunos
 
-[Keven Augusto Queiroz Bezerra](https://github.com/kevenaugusto)
-[Pedro Francisco de Mello Sousa](https://github.com/jantapao)
+ - [Keven Augusto Queiroz Bezerra](https://github.com/kevenaugusto)
+ - [Pedro Francisco de Mello Sousa](https://github.com/jantapao)
 
 ## Requisitos
 
